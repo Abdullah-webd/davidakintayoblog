@@ -16,9 +16,7 @@ app.use(cors({
   }));
   
 app.use(cookieParser());
-
 app.use(express.json());
-
 app.use(express.static(path.join(_dirname,'/client/dist')))
 
 
@@ -26,7 +24,7 @@ app.use('/api/user',router);
 app.use('/api/auth',authRouter);
 app.use('/api/post',postRouter);
 
-app.get('*',(req,res)=>{
+app.all('/{*any}',(req,res)=>{
     res.sendFile(path.join(_dirname,'client','dist','index.html'))
 })
 

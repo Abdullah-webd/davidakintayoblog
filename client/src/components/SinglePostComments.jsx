@@ -29,7 +29,7 @@ const SinglePostComments = ({ postId, goBack,title }) => {
   const handleDeleteComment = async (createdAt) => {
     try {
       const res = await fetch(
-        `/api/post/deleteComment/${postId}/${createdAt}`,
+        `/api/post/deleteComment/${postId}?createdAt=${createdAt}`,
         {
           method: "DELETE",
         }

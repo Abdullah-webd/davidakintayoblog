@@ -40,6 +40,6 @@ router.get('/getLike/:postId',verifyToken,getLike)
 
 router.get('/getAdminStats',verifyToken,getAdminStats)
 
-router.delete('/deleteComment/:postId/:createdAt',verifyToken,deleteComment)
+router.delete('/deleteComment/:postId',verifyToken,deleteComment)
 
 export default router;

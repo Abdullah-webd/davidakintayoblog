@@ -145,7 +145,7 @@ export const deleteComment = async (req, res, next) => {
       }
   
       post.comments = post.comments.filter(
-        (comment) => comment.createdAt.toISOString() !== req.params.createdAt
+        (comment) => comment.createdAt.toISOString() !== req.query.createdAt
       );
   
       const updatedPost = await post.save();
