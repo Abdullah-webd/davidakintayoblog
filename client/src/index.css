@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@plugin "flowbite-react/plugin/tailwindcss";
+@plugin 'tailwind-scrollbar';
+@source "../.flowbite-react/class-list.json";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+.ProseMirror {
+    outline: none;
+    min-height: 200px;
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge (Chromium) */
+  }
+  
+  /* Fix Flowbite Carousel specifically */
+  .carousel > div,
+.carousel > div > div {
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+}
+
+.carousel > div > div::-webkit-scrollbar {
+  display: none !important;
+}
+  .ProseMirror > * + * {
+    margin-top: 0.75em;
+  }
+  
+  .ProseMirror ul,
+  .ProseMirror ol {
+    padding-left: 1.5rem;
+  }
+
+  /* createpost.css */
+
+
+  
+  .ProseMirror h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .ProseMirror h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .ProseMirror pre {
+    background: #f4f4f4;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+  }
+  
+  /* Toolbar buttons */
+  .btn {
+    padding: 5px 10px;
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-active {
+    background-color: purple;
+    color: white;
+    border-color: purple;
+  }
+
+  /* Style for links in the editor */
+
+
+/* Table styles */
+table {
+  width: 100%; /* Make table width responsive or use a fixed width */
+  table-layout: fixed; /* Ensures that cells are fixed in width */
+  border-collapse: collapse; /* Optional: Collapses the table borders */
+  margin-bottom: 20px; /* Space below the table */
+}
+
+/* Fixed width for table cells (td) */
+td {
+  width: 150px; /* Fixed width for each cell */
+  min-width: 150px; /* Ensures the cells don’t shrink smaller than 150px */
+  padding: 8px; /* Padding inside the cell */
+  text-align: center; /* Align text inside the cells */
+  word-wrap: break-word; /* Wrap long words to prevent overflow */
+  overflow-wrap: break-word; /* Ensure long words wrap inside the cell */
+  border: 1px solid #ddd; /* Add a border for visibility */
+}
+
+/* Optional: Style for table headers (th) */
+th {
+  width: 150px; /* Fixed width for header cells */
+  min-width: 150px; /* Prevent shrinking */
+  padding: 8px;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border: 1px solid #ddd; /* Border to make header cells visible */
+  background-color: #ede6f0c4; 
+}
+
+@media (prefers-color-scheme: dark) {
+  table {
+    background-color: #2a2a2a; /* Dark background for the entire table */
+  }
+
+  th {
+    background-color: #444; /* Dark grey background for headers */
+    color: #fff; /* White text for headers */
+  }
+
+  td {
+    background-color: #333; /* Dark background for cells */
+    color: #fff; /* White text for cells */
+  }
+
+  td:first-child {
+    background-color: #444; /* Dark grey background for the first column cells */
+  }
+
+  td:hover {
+    background-color: #555; /* Hover effect for cells */
+  }
+}

@@ -1,0 +1,9 @@
+.create-post-container a {
+  color: #2563eb; /* Tailwind's blue-600 */
+  text-decoration: underline;
+}
+
+.create-post-container a:hover {
+  color: #1d4ed8; /* Darker blue on hover */
+  text-decoration: underline;
+}
