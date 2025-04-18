@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import { parseAst } from 'vite';
 
 const userSchema = new mongoose.Schema({
     username:{
