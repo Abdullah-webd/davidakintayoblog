@@ -6,7 +6,9 @@ import authRouter from './routes/auth.route.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import postRouter from './routes/post.route.js';
+import path from 'path';
 
+const _dirname = path.resolve();
 const app = express();
 app.use(cors({
     origin: 'http://localhost:5173',
@@ -17,10 +19,16 @@ app.use(cookieParser());
 
 app.use(express.json());
 
+app.use(express.static(path.join(_dirname,'/client/dist')))
+
 
 app.use('/api/user',router);
 app.use('/api/auth',authRouter);
 app.use('/api/post',postRouter);
+
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(_dirname,'client','dist','index.html'))
+})
 
 app.use((error,req,res,next)=>{
     const statusCode = error.statusCode || 500;
